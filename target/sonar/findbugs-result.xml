@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="4.7.3" sequence="0" timestamp="1694091491708" analysisTimestamp="1694091520887" release="">
+<BugCollection version="4.7.3" sequence="0" timestamp="1694098274927" analysisTimestamp="1694098292261" release="">
   <Project>
     <Jar>C:\Users\m.dileo\Polito\4-5 anno\2 anno\Tesi\testGit\target\classes\api\AccountAPI.class</Jar>
     <Jar>C:\Users\m.dileo\Polito\4-5 anno\2 anno\Tesi\testGit\target\classes\api\AdminAPI.class</Jar>
@@ -112,7 +112,7 @@
       <Message>At AccountViewServlet.java:[line 53]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="REQUESTDISPATCHER_FILE_DISCLOSURE" priority="1" rank="5" abbrev="SECSFDR" category="SECURITY" instanceHash="1138bd5d0f64e7a7a6e0ce6423a58401" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+  <BugInstance type="REQUESTDISPATCHER_FILE_DISCLOSURE" priority="1" rank="5" abbrev="SECSFDR" category="SECURITY" instanceHash="dcba542630dbe196badc68d27046fcf7" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>RequestDispatcher File Disclosure</ShortMessage>
     <LongMessage>RequestDispatcher populated with user controlled parameters</LongMessage>
     <Class classname="servlet.AccountViewServlet" primary="true">
@@ -134,11 +134,11 @@
     <String value="2" role="Sink parameter">
       <Message>Sink parameter 2</Message>
     </String>
-    <String value="javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;" role="Tainted source">
-      <Message>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;</Message>
-    </String>
     <String value="javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;" role="Tainted source">
       <Message>Tainted source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;</Message>
+    </String>
+    <String value="javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;" role="Tainted source">
+      <Message>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;</Message>
     </String>
     <SourceLine classname="servlet.AccountViewServlet" start="28" end="28" startBytecode="28" endBytecode="28" sourcefile="AccountViewServlet.java" sourcepath="servlet/AccountViewServlet.java">
       <Message>At AccountViewServlet.java:[line 28]</Message>
@@ -150,7 +150,7 @@
       <Message>At AccountViewServlet.java:[line 34]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="REQUESTDISPATCHER_FILE_DISCLOSURE" priority="1" rank="5" abbrev="SECSFDR" category="SECURITY" instanceHash="be5b4b362a0e82086ca163fbfb00892c" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+  <BugInstance type="REQUESTDISPATCHER_FILE_DISCLOSURE" priority="1" rank="5" abbrev="SECSFDR" category="SECURITY" instanceHash="e769ebf256ab48099da0d347e815e5c6" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>RequestDispatcher File Disclosure</ShortMessage>
     <LongMessage>RequestDispatcher populated with user controlled parameters</LongMessage>
     <Class classname="servlet.AccountViewServlet" primary="true">
@@ -172,11 +172,11 @@
     <String value="2" role="Sink parameter">
       <Message>Sink parameter 2</Message>
     </String>
-    <String value="javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;" role="Tainted source">
-      <Message>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;</Message>
-    </String>
     <String value="javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;" role="Tainted source">
       <Message>Tainted source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;</Message>
+    </String>
+    <String value="javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;" role="Tainted source">
+      <Message>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;</Message>
     </String>
     <SourceLine classname="servlet.AccountViewServlet" start="50" end="50" startBytecode="28" endBytecode="28" sourcefile="AccountViewServlet.java" sourcepath="servlet/AccountViewServlet.java">
       <Message>At AccountViewServlet.java:[line 50]</Message>
@@ -258,7 +258,7 @@
       <Message>At FindLocationServlet.java:[line 42]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a98284ec96b6f215a993efe78a7dc39d" instanceOccurrenceNum="0" instanceOccurrenceMax="5" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7fbf260d6d541f6d1a2e29417c97d3ba" instanceOccurrenceNum="0" instanceOccurrenceMax="5" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.FindLocationServlet" primary="true">
@@ -280,6 +280,9 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
+      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
+    </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2</Message>
     </String>
@@ -291,9 +294,6 @@
     </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1</Message>
-    </String>
-    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
-      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -320,7 +320,7 @@
       <Message>At FindLocationServlet.java:[line 103]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a98284ec96b6f215a993efe78a7dc39d" instanceOccurrenceNum="1" instanceOccurrenceMax="5" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7fbf260d6d541f6d1a2e29417c97d3ba" instanceOccurrenceNum="1" instanceOccurrenceMax="5" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.FindLocationServlet" primary="true">
@@ -342,6 +342,9 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
+      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
+    </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2</Message>
     </String>
@@ -353,9 +356,6 @@
     </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1</Message>
-    </String>
-    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
-      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -388,7 +388,7 @@
       <Message>At FindLocationServlet.java:[line 109]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a98284ec96b6f215a993efe78a7dc39d" instanceOccurrenceNum="2" instanceOccurrenceMax="5" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7fbf260d6d541f6d1a2e29417c97d3ba" instanceOccurrenceNum="2" instanceOccurrenceMax="5" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.FindLocationServlet" primary="true">
@@ -410,6 +410,9 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
+      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
+    </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2</Message>
     </String>
@@ -421,9 +424,6 @@
     </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1</Message>
-    </String>
-    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
-      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -456,7 +456,7 @@
       <Message>At FindLocationServlet.java:[line 110]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a98284ec96b6f215a993efe78a7dc39d" instanceOccurrenceNum="3" instanceOccurrenceMax="5" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7fbf260d6d541f6d1a2e29417c97d3ba" instanceOccurrenceNum="3" instanceOccurrenceMax="5" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.FindLocationServlet" primary="true">
@@ -478,6 +478,9 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
+      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
+    </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2</Message>
     </String>
@@ -489,9 +492,6 @@
     </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1</Message>
-    </String>
-    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
-      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -527,7 +527,7 @@
       <Message>At FindLocationServlet.java:[line 114]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a98284ec96b6f215a993efe78a7dc39d" instanceOccurrenceNum="4" instanceOccurrenceMax="5" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7fbf260d6d541f6d1a2e29417c97d3ba" instanceOccurrenceNum="4" instanceOccurrenceMax="5" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.FindLocationServlet" primary="true">
@@ -549,6 +549,9 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
+      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
+    </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2</Message>
     </String>
@@ -560,9 +563,6 @@
     </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1</Message>
-    </String>
-    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
-      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -598,7 +598,7 @@
       <Message>At FindLocationServlet.java:[line 115]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a98284ec96b6f215a993efe78a7dc39d" instanceOccurrenceNum="5" instanceOccurrenceMax="5" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7fbf260d6d541f6d1a2e29417c97d3ba" instanceOccurrenceNum="5" instanceOccurrenceMax="5" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.FindLocationServlet" primary="true">
@@ -620,6 +620,9 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
+      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
+    </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2</Message>
     </String>
@@ -631,9 +634,6 @@
     </String>
     <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1" role="Unknown source">
       <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1</Message>
-    </String>
-    <String value="servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4" role="Unknown source">
-      <Message>Unknown source servlet/FindLocationServlet.isSearchedOne(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 4</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -701,7 +701,7 @@
       <Message>At FindLocationServlet.java:[line 40]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="b94fb401743861cdd24875aaf0ea9aeb" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="f7a7606db1216e9bfd43a9feb913f32e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.error(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="servlet.LoginServlet" primary="true">
@@ -723,14 +723,14 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
+    <String value="util/DBUtil.isValidUser(Ljava/lang/String;Ljava/lang/String;)Z parameter 0" role="Unknown source">
+      <Message>Unknown source util/DBUtil.isValidUser(Ljava/lang/String;Ljava/lang/String;)Z parameter 0</Message>
+    </String>
     <String value="util/DBUtil.isValidLogin(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 0" role="Unknown source">
       <Message>Unknown source util/DBUtil.isValidLogin(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 0</Message>
     </String>
     <String value="javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;" role="Tainted source">
       <Message>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;</Message>
-    </String>
-    <String value="util/DBUtil.isValidUser(Ljava/lang/String;Ljava/lang/String;)Z parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.isValidUser(Ljava/lang/String;Ljava/lang/String;)Z parameter 0</Message>
     </String>
     <SourceLine classname="servlet.LoginServlet" start="53" end="53" startBytecode="22" endBytecode="22" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
       <Message>At LoginServlet.java:[line 53]</Message>
@@ -905,21 +905,21 @@
       <Message>At SurveyServlet.java:[line 50]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="8806a1452146e4118704067a9602799b" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="7d5409e63f1dc6af0855b20e236d995a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="addAccount" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="435" end="444" startBytecode="0" endBytecode="243" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="394" end="405" startBytecode="0" endBytecode="260" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.addAccount(String, String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="435" end="435" startBytecode="37" endBytecode="37" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 435]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="394" end="394" startBytecode="37" endBytecode="37" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 394]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
@@ -927,11 +927,11 @@
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
     </String>
-    <String value="util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
-    </String>
     <String value="util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1" role="Unknown source">
       <Message>Unknown source util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1</Message>
+    </String>
+    <String value="util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
+      <Message>Unknown source util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -945,25 +945,25 @@
     <SourceLine classname="servlet.AdminServlet" start="35" end="35" startBytecode="105" endBytecode="105" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
       <Message>At AdminServlet.java:[line 35]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="435" end="435" startBytecode="34" endBytecode="34" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 435]</Message>
+    <SourceLine classname="util.DBUtil" start="394" end="394" startBytecode="34" endBytecode="34" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 394]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a282d9fd4a054b76928174c5769ba7b6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="addSubscription" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="510" end="553" startBytecode="0" endBytecode="489" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="490" end="523" startBytecode="0" endBytecode="489" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.addSubscription(String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="510" end="510" startBytecode="28" endBytecode="28" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 510]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="490" end="490" startBytecode="28" endBytecode="28" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 490]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
@@ -983,34 +983,31 @@
     <SourceLine classname="servlet.SubscribeServlet" start="34" end="34" startBytecode="71" endBytecode="71" sourcefile="SubscribeServlet.java" sourcepath="servlet/SubscribeServlet.java">
       <Message>At SubscribeServlet.java:[line 34]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="510" end="510" startBytecode="17" endBytecode="17" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 510]</Message>
+    <SourceLine classname="util.DBUtil" start="490" end="490" startBytecode="17" endBytecode="17" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 490]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="b1f83866dab7b3952e606b71887db1fb" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="d26eead0c40907e65d7fc650f5c5017a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="addUser" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="463" end="472" startBytecode="0" endBytecode="336" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="430" end="444" startBytecode="0" endBytecode="378" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.addUser(String, String, String, String, String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="463" end="463" startBytecode="65" endBytecode="65" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 463]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="430" end="430" startBytecode="65" endBytecode="65" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 430]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
     </String>
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
     </String>
     <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2" role="Unknown source">
       <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2</Message>
@@ -1023,6 +1020,9 @@
     </String>
     <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3" role="Unknown source">
       <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3</Message>
+    </String>
+    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
+      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -1063,25 +1063,25 @@
     <SourceLine classname="servlet.AdminServlet" start="67" end="67" startBytecode="371" endBytecode="371" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
       <Message>At AdminServlet.java:[line 67]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="463" end="463" startBytecode="35" endBytecode="35" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 463]</Message>
+    <SourceLine classname="util.DBUtil" start="430" end="430" startBytecode="35" endBytecode="35" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 430]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="87d4a2b3915a372c6eb61f40630dd369" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="changePassword" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="477" end="486" startBytecode="0" endBytecode="242" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="450" end="461" startBytecode="0" endBytecode="260" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.changePassword(String, String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="477" end="477" startBytecode="37" endBytecode="37" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 477]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="450" end="450" startBytecode="37" endBytecode="37" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 450]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
@@ -1116,25 +1116,25 @@
     <SourceLine classname="servlet.AdminServlet" start="93" end="93" startBytecode="534" endBytecode="534" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
       <Message>At AdminServlet.java:[line 93]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="477" end="477" startBytecode="22" endBytecode="22" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 477]</Message>
+    <SourceLine classname="util.DBUtil" start="450" end="450" startBytecode="22" endBytecode="22" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 450]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="f626673ee3122236d28c0a8fa4525ffd" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="getUserInfo" signature="(Ljava/lang/String;)Lmodel/User;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="209" end="237" startBytecode="0" endBytecode="448" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="175" end="198" startBytecode="0" endBytecode="464" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.getUserInfo(String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="209" end="209" startBytecode="27" endBytecode="27" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 209]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="175" end="175" startBytecode="27" endBytecode="27" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 175]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
@@ -1172,14 +1172,14 @@
     <SourceLine classname="servlet.LoginServlet" start="72" end="72" startBytecode="164" endBytecode="164" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
       <Message>At LoginServlet.java:[line 72]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="209" end="209" startBytecode="21" endBytecode="21" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 209]</Message>
+    <SourceLine classname="util.DBUtil" start="175" end="175" startBytecode="21" endBytecode="21" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 175]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="263" end="263" startBytecode="17" endBytecode="17" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 263]</Message>
+    <SourceLine classname="util.DBUtil" start="224" end="224" startBytecode="17" endBytecode="17" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 224]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="267" end="267" startBytecode="63" endBytecode="63" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 267]</Message>
+    <SourceLine classname="util.DBUtil" start="226" end="226" startBytecode="63" endBytecode="63" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 226]</Message>
     </SourceLine>
     <SourceLine classname="util.OperationsUtil" start="26" end="26" startBytecode="60" endBytecode="60" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
       <Message>At OperationsUtil.java:[line 26]</Message>
@@ -1198,17 +1198,17 @@
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="isValidLogin" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="163" end="190" startBytecode="0" endBytecode="369" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="136" end="155" startBytecode="0" endBytecode="374" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.isValidLogin(String, String, String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="163" end="163" startBytecode="45" endBytecode="45" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 163]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="136" end="136" startBytecode="45" endBytecode="45" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 136]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
@@ -1273,40 +1273,43 @@
     <SourceLine classname="servlet.LoginServlet" start="60" end="60" startBytecode="65" endBytecode="65" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
       <Message>At LoginServlet.java:[line 60]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="163" end="163" startBytecode="39" endBytecode="39" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 163]</Message>
+    <SourceLine classname="util.DBUtil" start="136" end="136" startBytecode="39" endBytecode="39" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 136]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="195" end="195" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 195]</Message>
+    <SourceLine classname="util.DBUtil" start="160" end="160" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 160]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="200" end="200" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 200]</Message>
+    <SourceLine classname="util.DBUtil" start="165" end="165" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 165]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="205" end="205" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 205]</Message>
+    <SourceLine classname="util.DBUtil" start="170" end="170" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 170]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="8e936a1fa0d2b050daa19fda942efb68" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
+  <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="e0aa3df352eb5953f08a78a38ebcf0ff" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
     <ShortMessage>Potential CRLF Injection for logs</ShortMessage>
     <LongMessage>This use of org/apache/log4j/Logger.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="storeFeedback" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="491" end="505" startBytecode="0" endBytecode="419" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="467" end="485" startBytecode="0" endBytecode="456" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.storeFeedback(String, String, String, String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="491" end="491" startBytecode="55" endBytecode="55" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 491]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="467" end="467" startBytecode="55" endBytecode="55" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 467]</Message>
     </SourceLine>
     <String value="org/apache/log4j/Logger.debug(Ljava/lang/Object;)V" role="Sink method">
       <Message>Sink method org/apache/log4j/Logger.debug(Ljava/lang/Object;)V</Message>
     </String>
     <String value="0" role="Sink parameter">
       <Message>Sink parameter 0</Message>
+    </String>
+    <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0" role="Unknown source">
+      <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0</Message>
     </String>
     <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 3" role="Unknown source">
       <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 3</Message>
@@ -1316,9 +1319,6 @@
     </String>
     <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 2" role="Unknown source">
       <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 2</Message>
-    </String>
-    <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0</Message>
     </String>
     <String value="with tainted arguments detected" role="Method usage">
       <Message>Method usage with tainted arguments detected</Message>
@@ -1344,8 +1344,8 @@
     <SourceLine classname="servlet.FeedbackServlet" start="39" end="39" startBytecode="95" endBytecode="95" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
       <Message>At FeedbackServlet.java:[line 39]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="491" end="491" startBytecode="35" endBytecode="35" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 491]</Message>
+    <SourceLine classname="util.DBUtil" start="467" end="467" startBytecode="35" endBytecode="35" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 467]</Message>
     </SourceLine>
     <SourceLine classname="util.OperationsUtil" start="103" end="103" startBytecode="43" endBytecode="43" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
       <Message>At OperationsUtil.java:[line 103]</Message>
@@ -1363,284 +1363,21 @@
       <Message>At OperationsUtil.java:[line 109]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="f4cde3e3a472be5267a6750b141250fb" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="addAccount" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="435" end="444" startBytecode="0" endBytecode="243" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.addAccount(String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="440" end="440" startBytecode="88" endBytecode="88" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 440]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addAccount(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1</Message>
-    </String>
-    <String value="with tainted arguments detected" role="Method usage">
-      <Message>Method usage with tainted arguments detected</Message>
-    </String>
-    <SourceLine classname="servlet.AdminServlet" start="29" end="29" startBytecode="38" endBytecode="38" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 29]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="30" end="30" startBytecode="48" endBytecode="48" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 30]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="35" end="35" startBytecode="105" endBytecode="105" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 35]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="435" end="435" startBytecode="31" endBytecode="31" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 435]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="440" end="440" startBytecode="66" endBytecode="66" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 440]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="9e63965a12122c968efc3317f55e494" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="addUser" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="463" end="472" startBytecode="0" endBytecode="336" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.addUser(String, String, String, String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="468" end="468" startBytecode="148" endBytecode="148" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 468]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2</Message>
-    </String>
-    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1</Message>
-    </String>
-    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 4" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 4</Message>
-    </String>
-    <String value="util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3</Message>
-    </String>
-    <String value="with tainted arguments detected" role="Method usage">
-      <Message>Method usage with tainted arguments detected</Message>
-    </String>
-    <SourceLine classname="api.AdminAPI" start="99" end="99" startBytecode="57" endBytecode="57" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 99]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="100" end="100" startBytecode="68" endBytecode="68" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 100]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="101" end="101" startBytecode="79" endBytecode="79" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 101]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="102" end="102" startBytecode="90" endBytecode="90" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 102]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="103" end="103" startBytecode="101" endBytecode="101" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 103]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="125" end="125" startBytecode="341" endBytecode="341" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 125]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="45" end="45" startBytecode="149" endBytecode="149" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 45]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="46" end="46" startBytecode="159" endBytecode="159" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 46]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="47" end="47" startBytecode="169" endBytecode="169" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 47]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="48" end="48" startBytecode="179" endBytecode="179" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 48]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="49" end="49" startBytecode="189" endBytecode="189" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 49]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="67" end="67" startBytecode="371" endBytecode="371" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 67]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="463" end="463" startBytecode="22" endBytecode="22" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 463]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="468" end="468" startBytecode="132" endBytecode="132" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 468]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="1c0d0032da9a3ef2a711be2e7451eaab" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="changePassword" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="477" end="486" startBytecode="0" endBytecode="242" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.changePassword(String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="482" end="482" startBytecode="87" endBytecode="87" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 482]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.changePassword(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1" role="Unknown source">
-      <Message>Unknown source util/DBUtil.changePassword(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1</Message>
-    </String>
-    <String value="util/DBUtil.changePassword(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.changePassword(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
-    </String>
-    <String value="with tainted arguments detected" role="Method usage">
-      <Message>Method usage with tainted arguments detected</Message>
-    </String>
-    <SourceLine classname="api.AdminAPI" start="47" end="47" startBytecode="57" endBytecode="57" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 47]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="48" end="48" startBytecode="68" endBytecode="68" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 48]</Message>
-    </SourceLine>
-    <SourceLine classname="api.AdminAPI" start="66" end="66" startBytecode="223" endBytecode="223" sourcefile="AdminAPI.java" sourcepath="api/AdminAPI.java">
-      <Message>At AdminAPI.java:[line 66]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="79" end="79" startBytecode="415" endBytecode="415" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 79]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="80" end="80" startBytecode="425" endBytecode="425" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 80]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminServlet" start="93" end="93" startBytecode="534" endBytecode="534" sourcefile="AdminServlet.java" sourcepath="servlet/AdminServlet.java">
-      <Message>At AdminServlet.java:[line 93]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="477" end="477" startBytecode="22" endBytecode="22" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 477]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="482" end="482" startBytecode="76" endBytecode="76" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 482]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="cd4b5216bf90b473e2b880647813f60" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="getUserInfo" signature="(Ljava/lang/String;)Lmodel/User;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="209" end="237" startBytecode="0" endBytecode="448" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.getUserInfo(String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="216" end="216" startBytecode="82" endBytecode="82" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 216]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;" role="Sink method">
-      <Message>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.getUserInfo(Ljava/lang/String;)Lmodel/User; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.getUserInfo(Ljava/lang/String;)Lmodel/User; parameter 0</Message>
-    </String>
-    <String value="with tainted arguments detected" role="Method usage">
-      <Message>Method usage with tainted arguments detected</Message>
-    </String>
-    <SourceLine classname="api.LoginAPI" start="71" end="71" startBytecode="152" endBytecode="152" sourcefile="LoginAPI.java" sourcepath="api/LoginAPI.java">
-      <Message>At LoginAPI.java:[line 71]</Message>
-    </SourceLine>
-    <SourceLine classname="api.LoginAPI" start="87" end="87" startBytecode="253" endBytecode="253" sourcefile="LoginAPI.java" sourcepath="api/LoginAPI.java">
-      <Message>At LoginAPI.java:[line 87]</Message>
-    </SourceLine>
-    <SourceLine classname="model.User" start="46" end="46" startBytecode="1" endBytecode="1" sourcefile="User.java" sourcepath="model/User.java">
-      <Message>At User.java:[line 46]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminLoginServlet" start="27" end="27" startBytecode="11" endBytecode="11" sourcefile="AdminLoginServlet.java" sourcepath="servlet/AdminLoginServlet.java">
-      <Message>At AdminLoginServlet.java:[line 27]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.AdminLoginServlet" start="48" end="48" startBytecode="159" endBytecode="159" sourcefile="AdminLoginServlet.java" sourcepath="servlet/AdminLoginServlet.java">
-      <Message>At AdminLoginServlet.java:[line 48]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.LoginServlet" start="53" end="53" startBytecode="22" endBytecode="22" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
-      <Message>At LoginServlet.java:[line 53]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.LoginServlet" start="55" end="55" startBytecode="39" endBytecode="39" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
-      <Message>At LoginServlet.java:[line 55]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.LoginServlet" start="72" end="72" startBytecode="164" endBytecode="164" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
-      <Message>At LoginServlet.java:[line 72]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="209" end="209" startBytecode="21" endBytecode="21" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 209]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="216" end="216" startBytecode="76" endBytecode="76" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 216]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="263" end="263" startBytecode="17" endBytecode="17" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 263]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="267" end="267" startBytecode="63" endBytecode="63" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 267]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="26" end="26" startBytecode="60" endBytecode="60" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 26]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="88" end="88" startBytecode="388" endBytecode="388" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 88]</Message>
-    </SourceLine>
-    <SourceLine classname="util.ServletUtil" start="207" end="207" startBytecode="16" endBytecode="16" sourcefile="ServletUtil.java" sourcepath="util/ServletUtil.java">
-      <Message>At ServletUtil.java:[line 207]</Message>
-    </SourceLine>
-    <SourceLine classname="util.ServletUtil" start="210" end="210" startBytecode="31" endBytecode="31" sourcefile="ServletUtil.java" sourcepath="util/ServletUtil.java">
-      <Message>At ServletUtil.java:[line 210]</Message>
-    </SourceLine>
-  </BugInstance>
   <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="64b89c96f23e7be15c00dd0976c83ea4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
     <ShortMessage>Potential JDBC Injection</ShortMessage>
     <LongMessage>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="isValidLogin" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="163" end="190" startBytecode="0" endBytecode="369" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="136" end="155" startBytecode="0" endBytecode="374" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.isValidLogin(String, String, String)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="173" end="173" startBytecode="88" endBytecode="88" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 173]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="142" end="142" startBytecode="89" endBytecode="89" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 142]</Message>
     </SourceLine>
     <String value="java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;" role="Sink method">
       <Message>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;</Message>
@@ -1705,408 +1442,71 @@
     <SourceLine classname="servlet.LoginServlet" start="60" end="60" startBytecode="65" endBytecode="65" sourcefile="LoginServlet.java" sourcepath="servlet/LoginServlet.java">
       <Message>At LoginServlet.java:[line 60]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="163" end="163" startBytecode="39" endBytecode="39" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 163]</Message>
+    <SourceLine classname="util.DBUtil" start="136" end="136" startBytecode="39" endBytecode="39" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 136]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="195" end="195" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 195]</Message>
+    <SourceLine classname="util.DBUtil" start="160" end="160" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 160]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="200" end="200" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 200]</Message>
+    <SourceLine classname="util.DBUtil" start="165" end="165" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 165]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="205" end="205" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 205]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="1" rank="5" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="42985ed07f72953f23d7cdd90422a74d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;I)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="storeFeedback" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="491" end="505" startBytecode="0" endBytecode="419" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.storeFeedback(String, String, String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="496" end="496" startBytecode="127" endBytecode="127" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 496]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;I)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;I)Z</Message>
-    </String>
-    <String value="1" role="Sink parameter">
-      <Message>Sink parameter 1</Message>
-    </String>
-    <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 3" role="Unknown source">
-      <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 3</Message>
-    </String>
-    <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 1" role="Unknown source">
-      <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 1</Message>
-    </String>
-    <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 2" role="Unknown source">
-      <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 2</Message>
-    </String>
-    <String value="util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.storeFeedback(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0</Message>
-    </String>
-    <String value="with tainted arguments detected" role="Method usage">
-      <Message>Method usage with tainted arguments detected</Message>
-    </String>
-    <SourceLine classname="api.FeedbackAPI" start="57" end="57" startBytecode="148" endBytecode="148" sourcefile="FeedbackAPI.java" sourcepath="api/FeedbackAPI.java">
-      <Message>At FeedbackAPI.java:[line 57]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.FeedbackServlet" start="31" end="31" startBytecode="39" endBytecode="39" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
-      <Message>At FeedbackServlet.java:[line 31]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.FeedbackServlet" start="33" end="33" startBytecode="53" endBytecode="53" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
-      <Message>At FeedbackServlet.java:[line 33]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.FeedbackServlet" start="34" end="34" startBytecode="61" endBytecode="61" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
-      <Message>At FeedbackServlet.java:[line 34]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.FeedbackServlet" start="35" end="35" startBytecode="71" endBytecode="71" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
-      <Message>At FeedbackServlet.java:[line 35]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.FeedbackServlet" start="36" end="36" startBytecode="81" endBytecode="81" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
-      <Message>At FeedbackServlet.java:[line 36]</Message>
-    </SourceLine>
-    <SourceLine classname="servlet.FeedbackServlet" start="39" end="39" startBytecode="95" endBytecode="95" sourcefile="FeedbackServlet.java" sourcepath="servlet/FeedbackServlet.java">
-      <Message>At FeedbackServlet.java:[line 39]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="491" end="491" startBytecode="35" endBytecode="35" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 491]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="496" end="496" startBytecode="102" endBytecode="102" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 496]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="103" end="103" startBytecode="43" endBytecode="43" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 103]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="105" end="105" startBytecode="58" endBytecode="58" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 105]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="106" end="106" startBytecode="63" endBytecode="63" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 106]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="107" end="107" startBytecode="68" endBytecode="68" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 107]</Message>
-    </SourceLine>
-    <SourceLine classname="util.OperationsUtil" start="109" end="109" startBytecode="76" endBytecode="76" sourcefile="OperationsUtil.java" sourcepath="util/OperationsUtil.java">
-      <Message>At OperationsUtil.java:[line 109]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="74630c38a07326d5dc964b1c0242d340" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="addSpecialUser" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="449" end="458" startBytecode="0" endBytecode="306" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.addSpecialUser(String, String, String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="454" end="454" startBytecode="128" endBytecode="128" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 454]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1</Message>
-    </String>
-    <String value="util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3</Message>
-    </String>
-    <String value="util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2" role="Unknown source">
-      <Message>Unknown source util/DBUtil.addSpecialUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2</Message>
-    </String>
-    <String value="not detected" role="Method usage">
-      <Message>Method usage not detected</Message>
-    </String>
-    <SourceLine classname="util.DBUtil" start="449" end="449" startBytecode="44" endBytecode="44" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 449]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="454" end="454" startBytecode="122" endBytecode="122" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 454]</Message>
-    </SourceLine>
-    <SourceLine classname="util.ServletUtil" start="174" end="174" startBytecode="4" endBytecode="4" sourcefile="ServletUtil.java" sourcepath="util/ServletUtil.java">
-      <Message>At ServletUtil.java:[line 174]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="ee289e325d5aba2196d172b1d8ac1efc" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="getAccounts" signature="(Ljava/lang/String;)[Lmodel/Account;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="241" end="259" startBytecode="0" endBytecode="410" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.getAccounts(String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="248" end="248" startBytecode="82" endBytecode="82" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 248]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;" role="Sink method">
-      <Message>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="util/DBUtil.getAccounts(Ljava/lang/String;)[Lmodel/Account; parameter 0" role="Unknown source">
-      <Message>Unknown source util/DBUtil.getAccounts(Ljava/lang/String;)[Lmodel/Account; parameter 0</Message>
-    </String>
-    <String value="not detected" role="Method usage">
-      <Message>Method usage not detected</Message>
-    </String>
-    <SourceLine classname="util.DBUtil" start="241" end="241" startBytecode="16" endBytecode="16" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 241]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="248" end="248" startBytecode="76" endBytecode="76" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 248]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="6f6af31be4fd00a8ecb85698c7b21c78" instanceOccurrenceNum="0" instanceOccurrenceMax="1" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="transferFunds" signature="(Ljava/lang/String;JJD)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="263" end="332" startBytecode="0" endBytecode="1249" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.transferFunds(String, long, long, double)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="309" end="309" startBytecode="328" endBytecode="328" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 309]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="java/sql/Timestamp.&lt;init&gt;(J)V" role="Unknown source">
-      <Message>Unknown source java/sql/Timestamp.&lt;init&gt;(J)V</Message>
-    </String>
-    <SourceLine classname="util.DBUtil" start="285" end="285" startBytecode="144" endBytecode="144" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 285]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="309" end="309" startBytecode="312" endBytecode="312" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 309]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_INJECTION_JDBC" priority="2" rank="7" abbrev="SECSQLIJDBC" category="SECURITY" instanceHash="6f6af31be4fd00a8ecb85698c7b21c78" instanceOccurrenceNum="1" instanceOccurrenceMax="1" cweid="89">
-    <ShortMessage>Potential JDBC Injection</ShortMessage>
-    <LongMessage>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="transferFunds" signature="(Ljava/lang/String;JJD)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="263" end="332" startBytecode="0" endBytecode="1249" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.transferFunds(String, long, long, double)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="319" end="319" startBytecode="498" endBytecode="498" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 319]</Message>
-    </SourceLine>
-    <String value="java/sql/Statement.execute(Ljava/lang/String;)Z" role="Sink method">
-      <Message>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z</Message>
-    </String>
-    <String value="0" role="Sink parameter">
-      <Message>Sink parameter 0</Message>
-    </String>
-    <String value="java/sql/Timestamp.&lt;init&gt;(J)V" role="Unknown source">
-      <Message>Unknown source java/sql/Timestamp.&lt;init&gt;(J)V</Message>
-    </String>
-    <SourceLine classname="util.DBUtil" start="285" end="285" startBytecode="144" endBytecode="144" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 285]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="309" end="309" startBytecode="312" endBytecode="312" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 309]</Message>
-    </SourceLine>
-    <SourceLine classname="util.DBUtil" start="319" end="319" startBytecode="481" endBytecode="481" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 319]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="5caa0f0de61e337e127fbc0e5f4b3982" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.addAccount(String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="addAccount" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="435" end="444" startBytecode="0" endBytecode="47" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.addAccount(String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="440" end="440" startBytecode="88" endBytecode="88" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 440]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="ba7be7b79ca7b24686055dc4ea00bcfb" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.addSpecialUser(String, String, String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="addSpecialUser" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="449" end="458" startBytecode="0" endBytecode="63" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.addSpecialUser(String, String, String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="454" end="454" startBytecode="128" endBytecode="128" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 454]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="e33ad08c8ebd8095d3b636eaca4762a1" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.addUser(String, String, String, String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="addUser" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="463" end="472" startBytecode="0" endBytecode="71" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.addUser(String, String, String, String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="468" end="468" startBytecode="148" endBytecode="148" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 468]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="54e3d15eb2efb5bcc50a55ed677fe18d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.changePassword(String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="changePassword" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="477" end="486" startBytecode="0" endBytecode="47" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.changePassword(String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="482" end="482" startBytecode="87" endBytecode="87" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 482]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="d386142a70cef0af6cb65a16325071fa" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.getAccounts(String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="getAccounts" signature="(Ljava/lang/String;)[Lmodel/Account;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="241" end="259" startBytecode="0" endBytecode="76" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.getAccounts(String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="248" end="248" startBytecode="82" endBytecode="82" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 248]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="e612a15a5e9b5c80d6d76f57275d4702" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.getTransactions(String, String, Account[], int) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="getTransactions" signature="(Ljava/lang/String;Ljava/lang/String;[Lmodel/Account;I)[Lmodel/Transaction;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="337" end="386" startBytecode="0" endBytecode="258" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.getTransactions(String, String, Account[], int)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="366" end="366" startBytecode="457" endBytecode="457" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 366]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="e47342b94dcf14fd9165d584ae96c0cf" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.getUserInfo(String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="getUserInfo" signature="(Ljava/lang/String;)Lmodel/User;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="209" end="237" startBytecode="0" endBytecode="87" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.getUserInfo(String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="216" end="216" startBytecode="82" endBytecode="82" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 216]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="22f37071000fd11524df3ea7ae79cc4f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
-    <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
-    <LongMessage>util.DBUtil.storeFeedback(String, String, String, String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
-    <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
-      </SourceLine>
-      <Message>In class util.DBUtil</Message>
-    </Class>
-    <Method classname="util.DBUtil" name="storeFeedback" signature="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="491" end="505" startBytecode="0" endBytecode="75" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
-      <Message>In method util.DBUtil.storeFeedback(String, String, String, String)</Message>
-    </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="496" end="496" startBytecode="127" endBytecode="127" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 496]</Message>
+    <SourceLine classname="util.DBUtil" start="170" end="170" startBytecode="6" endBytecode="6" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 170]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="3baf9fb80753ca16af2cb7959db4fa34" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
     <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
     <LongMessage>util.DBUtil.transferFunds(String, long, long, double) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
     <Class classname="util.DBUtil" primary="true">
-      <SourceLine classname="util.DBUtil" start="26" end="599" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-        <Message>At DBUtil.java:[lines 26-599]</Message>
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
       </SourceLine>
       <Message>In class util.DBUtil</Message>
     </Class>
     <Method classname="util.DBUtil" name="transferFunds" signature="(Ljava/lang/String;JJD)Ljava/lang/String;" isStatic="true" primary="true">
-      <SourceLine classname="util.DBUtil" start="263" end="332" startBytecode="0" endBytecode="263" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <SourceLine classname="util.DBUtil" start="224" end="289" startBytecode="0" endBytecode="277" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
       <Message>In method util.DBUtil.transferFunds(String, long, long, double)</Message>
     </Method>
-    <SourceLine classname="util.DBUtil" primary="true" start="309" end="309" startBytecode="328" endBytecode="328" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
-      <Message>At DBUtil.java:[line 309]</Message>
+    <SourceLine classname="util.DBUtil" primary="true" start="284" end="284" startBytecode="637" endBytecode="637" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 284]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="325" end="325" startBytecode="597" endBytecode="597" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at DBUtil.java:[line 325]</Message>
+    <SourceLine classname="util.DBUtil" start="285" end="285" startBytecode="686" endBytecode="686" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at DBUtil.java:[line 285]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="319" end="319" startBytecode="498" endBytecode="498" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at DBUtil.java:[line 319]</Message>
+  </BugInstance>
+  <BugInstance type="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="85580eca8cbbc33ed1070fa75d027a43" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
+    <ShortMessage>A prepared statement is generated from a nonconstant String</ShortMessage>
+    <LongMessage>A prepared statement is generated from a nonconstant String in util.DBUtil.getTransactions(String, String, Account[], int)</LongMessage>
+    <Class classname="util.DBUtil" primary="true">
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
+      </SourceLine>
+      <Message>In class util.DBUtil</Message>
+    </Class>
+    <Method classname="util.DBUtil" name="getTransactions" signature="(Ljava/lang/String;Ljava/lang/String;[Lmodel/Account;I)[Lmodel/Transaction;" isStatic="true" primary="true">
+      <SourceLine classname="util.DBUtil" start="295" end="352" startBytecode="0" endBytecode="280" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <Message>In method util.DBUtil.getTransactions(String, String, Account[], int)</Message>
+    </Method>
+    <SourceLine classname="util.DBUtil" primary="true" start="316" end="316" startBytecode="307" endBytecode="307" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 316]</Message>
     </SourceLine>
-    <SourceLine classname="util.DBUtil" start="326" end="326" startBytecode="646" endBytecode="646" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at DBUtil.java:[line 326]</Message>
+  </BugInstance>
+  <BugInstance type="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING" priority="1" rank="10" abbrev="SQL" category="SECURITY" instanceHash="f88584551be569ac83b9bc1e66bc97e4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="89">
+    <ShortMessage>A prepared statement is generated from a nonconstant String</ShortMessage>
+    <LongMessage>A prepared statement is generated from a nonconstant String in util.DBUtil.transferFunds(String, long, long, double)</LongMessage>
+    <Class classname="util.DBUtil" primary="true">
+      <SourceLine classname="util.DBUtil" start="23" end="559" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+        <Message>At DBUtil.java:[lines 23-559]</Message>
+      </SourceLine>
+      <Message>In class util.DBUtil</Message>
+    </Class>
+    <Method classname="util.DBUtil" name="transferFunds" signature="(Ljava/lang/String;JJD)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="util.DBUtil" start="224" end="289" startBytecode="0" endBytecode="277" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java"/>
+      <Message>In method util.DBUtil.transferFunds(String, long, long, double)</Message>
+    </Method>
+    <SourceLine classname="util.DBUtil" primary="true" start="258" end="258" startBytecode="257" endBytecode="257" sourcefile="DBUtil.java" sourcepath="util/DBUtil.java">
+      <Message>At DBUtil.java:[line 258]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="CRLF_INJECTION_LOGS" priority="2" rank="7" abbrev="SECCRLFLOG" category="SECURITY" instanceHash="a430ddb9e9434e27c14a6bad5e6a47e6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="117">
@@ -2721,6 +2121,17 @@ SQL injection attacks.
 
     ]]></Details>
   </BugPattern>
+  <BugPattern type="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING" abbrev="SQL" category="SECURITY" cweid="89">
+    <ShortDescription>A prepared statement is generated from a nonconstant String</ShortDescription>
+    <Details><![CDATA[
+
+  <p>The code creates an SQL prepared statement from a nonconstant String.
+If unchecked, tainted data from a user is used in building this String, SQL injection could
+be used to make the prepared statement do something unexpected and undesirable.
+</p>
+
+    ]]></Details>
+  </BugPattern>
   <BugPattern type="PATH_TRAVERSAL_IN" abbrev="SECPTI" category="SECURITY" cweid="22">
     <ShortDescription>Potential Path Traversal (file read)</ShortDescription>
     <Details><![CDATA[
@@ -2860,7 +2271,7 @@ cookie.setHttpOnly(true);
     <Description>Potential SQL Problem</Description>
   </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Thu, 7 Sep 2023 14:58:11 +0200" total_classes="29" referenced_classes="138" total_bugs="53" total_size="1577" num_packages="5" java_version="17.0.6" vm_version="17.0.6+9-LTS-190" cpu_seconds="3.86" clock_seconds="5.80" peak_mbytes="359.57" alloc_mbytes="4022.00" gc_seconds="0.08" priority_2="33" priority_1="20">
+  <FindBugsSummary timestamp="Thu, 7 Sep 2023 16:51:14 +0200" total_classes="29" referenced_classes="138" total_bugs="38" total_size="1629" num_packages="5" java_version="17.0.6" vm_version="17.0.6+9-LTS-190" cpu_seconds="2.94" clock_seconds="5.09" peak_mbytes="365.07" alloc_mbytes="4022.00" gc_seconds="0.06" priority_2="29" priority_1="9">
     <FileStats path="api/AccountAPI.java" bugCount="0" size="118"/>
     <FileStats path="api/AdminAPI.java" bugCount="0" size="60"/>
     <FileStats path="api/FeedbackAPI.java" bugCount="0" size="43"/>
@@ -2874,19 +2285,19 @@ cookie.setHttpOnly(true);
     <FileStats path="model/Feedback.java" bugCount="0" size="30"/>
     <FileStats path="model/Transaction.java" bugCount="0" size="24"/>
     <FileStats path="model/User.java" bugCount="0" size="68"/>
-    <FileStats path="servlet/AccountViewServlet.java" bugCount="4" size="32" bugHash="c86c24dff81fbd5fee9319c72018c63f"/>
+    <FileStats path="servlet/AccountViewServlet.java" bugCount="4" size="32" bugHash="c773f59018a1924f5df987e64ee27a6a"/>
     <FileStats path="servlet/AdminLoginServlet.java" bugCount="0" size="32"/>
     <FileStats path="servlet/AdminServlet.java" bugCount="1" size="67" bugHash="1d1b5dbb7b2b9ac1878c4b00524f1d50"/>
     <FileStats path="servlet/CCApplyServlet.java" bugCount="0" size="25"/>
     <FileStats path="servlet/FeedbackServlet.java" bugCount="0" size="29"/>
-    <FileStats path="servlet/FindLocationServlet.java" bugCount="8" size="76" bugHash="37f892ccfe860d21d5a67110e37b1736"/>
-    <FileStats path="servlet/LoginServlet.java" bugCount="1" size="45" bugHash="9d73c90e9566f5fb5074b1d17417958a"/>
+    <FileStats path="servlet/FindLocationServlet.java" bugCount="8" size="76" bugHash="fafa6417e10f3bf5e74b4887f96fd903"/>
+    <FileStats path="servlet/LoginServlet.java" bugCount="1" size="45" bugHash="8b921f868970ebe021e1506b772225ef"/>
     <FileStats path="servlet/RedirectServlet.java" bugCount="1" size="16" bugHash="443ddf171171a823fcaceac28ffb19a2"/>
     <FileStats path="servlet/SpecialPrizeServlet.java" bugCount="0" size="35"/>
     <FileStats path="servlet/SubscribeServlet.java" bugCount="1" size="26" bugHash="1158cddf00055fd920e16a3d030938c3"/>
     <FileStats path="servlet/SurveyServlet.java" bugCount="3" size="45" bugHash="6a64f7fb6ced93f891ae3ec3cf088123"/>
     <FileStats path="servlet/TransferServlet.java" bugCount="0" size="24"/>
-    <FileStats path="util/DBUtil.java" bugCount="26" size="362" bugHash="30de82f392c112bc26c8432ce959edf8"/>
+    <FileStats path="util/DBUtil.java" bugCount="11" size="414" bugHash="72ad0a73027a9a20120f0a78644f8586"/>
     <FileStats path="util/OperationsUtil.java" bugCount="2" size="60" bugHash="db2cead4dda08c541d726932757b0573"/>
     <FileStats path="util/ServletUtil.java" bugCount="6" size="156" bugHash="c7200624bf64539c11b477dd22cf8d89"/>
     <PackageStats package="api" total_bugs="0" total_types="7" total_size="311">
@@ -2923,58 +2334,54 @@ cookie.setHttpOnly(true);
       <ClassStats class="servlet.SurveyServlet" sourceFile="SurveyServlet.java" interface="false" size="45" bugs="3" priority_2="2" priority_1="1"/>
       <ClassStats class="servlet.TransferServlet" sourceFile="TransferServlet.java" interface="false" size="24" bugs="0"/>
     </PackageStats>
-    <PackageStats package="util" total_bugs="34" total_types="3" total_size="578" priority_2="19" priority_1="15">
-      <ClassStats class="util.DBUtil" sourceFile="DBUtil.java" interface="false" size="362" bugs="26" priority_2="11" priority_1="15"/>
+    <PackageStats package="util" total_bugs="19" total_types="3" total_size="630" priority_2="15" priority_1="4">
+      <ClassStats class="util.DBUtil" sourceFile="DBUtil.java" interface="false" size="414" bugs="11" priority_2="7" priority_1="4"/>
       <ClassStats class="util.OperationsUtil" sourceFile="OperationsUtil.java" interface="false" size="60" bugs="2" priority_2="2"/>
       <ClassStats class="util.ServletUtil" sourceFile="ServletUtil.java" interface="false" size="156" bugs="6" priority_2="6"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="387" invocations="918" avgMicrosecondsPerInvocation="421" maxMicrosecondsPerInvocation="29529" standardDeviationMicrosecondsPerInvocation="1590"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="201" invocations="922" avgMicrosecondsPerInvocation="218" maxMicrosecondsPerInvocation="1909" standardDeviationMicrosecondsPerInvocation="295"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="137" invocations="183" avgMicrosecondsPerInvocation="753" maxMicrosecondsPerInvocation="22407" standardDeviationMicrosecondsPerInvocation="2377"/>
-      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="134" invocations="163" avgMicrosecondsPerInvocation="827" maxMicrosecondsPerInvocation="24805" standardDeviationMicrosecondsPerInvocation="2520"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="133" invocations="163" avgMicrosecondsPerInvocation="818" maxMicrosecondsPerInvocation="35064" standardDeviationMicrosecondsPerInvocation="3148"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="126" invocations="163" avgMicrosecondsPerInvocation="776" maxMicrosecondsPerInvocation="36462" standardDeviationMicrosecondsPerInvocation="3114"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="124" invocations="163" avgMicrosecondsPerInvocation="763" maxMicrosecondsPerInvocation="90916" standardDeviationMicrosecondsPerInvocation="7115"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="117" invocations="184" avgMicrosecondsPerInvocation="636" maxMicrosecondsPerInvocation="33110" standardDeviationMicrosecondsPerInvocation="2869"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="111" invocations="138" avgMicrosecondsPerInvocation="808" maxMicrosecondsPerInvocation="12821" standardDeviationMicrosecondsPerInvocation="1621"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="104" invocations="163" avgMicrosecondsPerInvocation="638" maxMicrosecondsPerInvocation="30304" standardDeviationMicrosecondsPerInvocation="2695"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="103" invocations="462" avgMicrosecondsPerInvocation="223" maxMicrosecondsPerInvocation="5801" standardDeviationMicrosecondsPerInvocation="466"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="90" invocations="163" avgMicrosecondsPerInvocation="558" maxMicrosecondsPerInvocation="42282" standardDeviationMicrosecondsPerInvocation="3323"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="88" invocations="229" avgMicrosecondsPerInvocation="387" maxMicrosecondsPerInvocation="39071" standardDeviationMicrosecondsPerInvocation="2624"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="87" invocations="138" avgMicrosecondsPerInvocation="636" maxMicrosecondsPerInvocation="8220" standardDeviationMicrosecondsPerInvocation="1163"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="65" invocations="135" avgMicrosecondsPerInvocation="483" maxMicrosecondsPerInvocation="10545" standardDeviationMicrosecondsPerInvocation="1296"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="63" invocations="29" avgMicrosecondsPerInvocation="2195" maxMicrosecondsPerInvocation="45826" standardDeviationMicrosecondsPerInvocation="8540"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="52" invocations="29" avgMicrosecondsPerInvocation="1826" maxMicrosecondsPerInvocation="35014" standardDeviationMicrosecondsPerInvocation="6753"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="51" invocations="163" avgMicrosecondsPerInvocation="313" maxMicrosecondsPerInvocation="36973" standardDeviationMicrosecondsPerInvocation="2911"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="46" invocations="138" avgMicrosecondsPerInvocation="335" maxMicrosecondsPerInvocation="14714" standardDeviationMicrosecondsPerInvocation="1283"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="42" invocations="29" avgMicrosecondsPerInvocation="1479" maxMicrosecondsPerInvocation="33597" standardDeviationMicrosecondsPerInvocation="6102"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="41" invocations="138" avgMicrosecondsPerInvocation="303" maxMicrosecondsPerInvocation="27509" standardDeviationMicrosecondsPerInvocation="2330"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="37" invocations="45" avgMicrosecondsPerInvocation="822" maxMicrosecondsPerInvocation="7330" standardDeviationMicrosecondsPerInvocation="1515"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="36" invocations="138" avgMicrosecondsPerInvocation="267" maxMicrosecondsPerInvocation="10221" standardDeviationMicrosecondsPerInvocation="921"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUncalledPrivateMethods" totalMilliseconds="33" invocations="29" avgMicrosecondsPerInvocation="1160" maxMicrosecondsPerInvocation="30486" standardDeviationMicrosecondsPerInvocation="5543"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteUnconditionalParamDerefs" totalMilliseconds="32" invocations="29" avgMicrosecondsPerInvocation="1120" maxMicrosecondsPerInvocation="30629" standardDeviationMicrosecondsPerInvocation="5577"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="31" invocations="878" avgMicrosecondsPerInvocation="35" maxMicrosecondsPerInvocation="1671" standardDeviationMicrosecondsPerInvocation="91"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="30" invocations="138" avgMicrosecondsPerInvocation="221" maxMicrosecondsPerInvocation="10058" standardDeviationMicrosecondsPerInvocation="886"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.LazyInit" totalMilliseconds="30" invocations="29" avgMicrosecondsPerInvocation="1040" maxMicrosecondsPerInvocation="29622" standardDeviationMicrosecondsPerInvocation="5401"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BadlyOverriddenAdapter" totalMilliseconds="30" invocations="29" avgMicrosecondsPerInvocation="1038" maxMicrosecondsPerInvocation="28036" standardDeviationMicrosecondsPerInvocation="5103"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="29" invocations="163" avgMicrosecondsPerInvocation="181" maxMicrosecondsPerInvocation="7416" standardDeviationMicrosecondsPerInvocation="630"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUnsatisfiedObligation" totalMilliseconds="28" invocations="29" avgMicrosecondsPerInvocation="969" maxMicrosecondsPerInvocation="20690" standardDeviationMicrosecondsPerInvocation="3835"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="24" invocations="29" avgMicrosecondsPerInvocation="829" maxMicrosecondsPerInvocation="10770" standardDeviationMicrosecondsPerInvocation="2042"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="23" invocations="29" avgMicrosecondsPerInvocation="818" maxMicrosecondsPerInvocation="11879" standardDeviationMicrosecondsPerInvocation="2263"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="23" invocations="138" avgMicrosecondsPerInvocation="169" maxMicrosecondsPerInvocation="1505" standardDeviationMicrosecondsPerInvocation="303"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ClassContextClassAnalysisEngine" totalMilliseconds="22" invocations="219" avgMicrosecondsPerInvocation="104" maxMicrosecondsPerInvocation="21889" standardDeviationMicrosecondsPerInvocation="1475"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="22" invocations="138" avgMicrosecondsPerInvocation="163" maxMicrosecondsPerInvocation="1403" standardDeviationMicrosecondsPerInvocation="240"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="22" invocations="162" avgMicrosecondsPerInvocation="139" maxMicrosecondsPerInvocation="5202" standardDeviationMicrosecondsPerInvocation="493"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ObligationDataflowFactory" totalMilliseconds="20" invocations="45" avgMicrosecondsPerInvocation="447" maxMicrosecondsPerInvocation="17781" standardDeviationMicrosecondsPerInvocation="2614"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="19" invocations="29" avgMicrosecondsPerInvocation="656" maxMicrosecondsPerInvocation="10258" standardDeviationMicrosecondsPerInvocation="1890"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantPoolGenFactory" totalMilliseconds="18" invocations="29" avgMicrosecondsPerInvocation="651" maxMicrosecondsPerInvocation="9144" standardDeviationMicrosecondsPerInvocation="2155"/>
-      <ClassProfile name="com.h3xstream.findsecbugs.endpoint.ServletEndpointDetector" totalMilliseconds="18" invocations="29" avgMicrosecondsPerInvocation="641" maxMicrosecondsPerInvocation="11104" standardDeviationMicrosecondsPerInvocation="2009"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="17" invocations="138" avgMicrosecondsPerInvocation="124" maxMicrosecondsPerInvocation="1186" standardDeviationMicrosecondsPerInvocation="223"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="16" invocations="29" avgMicrosecondsPerInvocation="575" maxMicrosecondsPerInvocation="4108" standardDeviationMicrosecondsPerInvocation="907"/>
-      <ClassProfile name="com.h3xstream.findsecbugs.injection.crlf.CrlfLogInjectionDetector" totalMilliseconds="15" invocations="29" avgMicrosecondsPerInvocation="548" maxMicrosecondsPerInvocation="5197" standardDeviationMicrosecondsPerInvocation="1111"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBugsSummaryStats" totalMilliseconds="15" invocations="138" avgMicrosecondsPerInvocation="114" maxMicrosecondsPerInvocation="14538" standardDeviationMicrosecondsPerInvocation="1232"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="15" invocations="29" avgMicrosecondsPerInvocation="537" maxMicrosecondsPerInvocation="2980" standardDeviationMicrosecondsPerInvocation="741"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="394" invocations="918" avgMicrosecondsPerInvocation="430" maxMicrosecondsPerInvocation="34742" standardDeviationMicrosecondsPerInvocation="1575"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="133" invocations="163" avgMicrosecondsPerInvocation="821" maxMicrosecondsPerInvocation="39502" standardDeviationMicrosecondsPerInvocation="3424"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="126" invocations="922" avgMicrosecondsPerInvocation="137" maxMicrosecondsPerInvocation="2289" standardDeviationMicrosecondsPerInvocation="182"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="124" invocations="138" avgMicrosecondsPerInvocation="904" maxMicrosecondsPerInvocation="11918" standardDeviationMicrosecondsPerInvocation="1709"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="116" invocations="179" avgMicrosecondsPerInvocation="648" maxMicrosecondsPerInvocation="27885" standardDeviationMicrosecondsPerInvocation="2308"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="113" invocations="163" avgMicrosecondsPerInvocation="694" maxMicrosecondsPerInvocation="18625" standardDeviationMicrosecondsPerInvocation="2185"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="105" invocations="462" avgMicrosecondsPerInvocation="227" maxMicrosecondsPerInvocation="5656" standardDeviationMicrosecondsPerInvocation="402"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="104" invocations="163" avgMicrosecondsPerInvocation="642" maxMicrosecondsPerInvocation="25032" standardDeviationMicrosecondsPerInvocation="2242"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="97" invocations="138" avgMicrosecondsPerInvocation="706" maxMicrosecondsPerInvocation="7892" standardDeviationMicrosecondsPerInvocation="1186"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="95" invocations="180" avgMicrosecondsPerInvocation="533" maxMicrosecondsPerInvocation="22317" standardDeviationMicrosecondsPerInvocation="1923"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="94" invocations="163" avgMicrosecondsPerInvocation="579" maxMicrosecondsPerInvocation="18000" standardDeviationMicrosecondsPerInvocation="2008"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="88" invocations="163" avgMicrosecondsPerInvocation="544" maxMicrosecondsPerInvocation="61736" standardDeviationMicrosecondsPerInvocation="4845"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="84" invocations="163" avgMicrosecondsPerInvocation="520" maxMicrosecondsPerInvocation="37608" standardDeviationMicrosecondsPerInvocation="2996"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="77" invocations="29" avgMicrosecondsPerInvocation="2661" maxMicrosecondsPerInvocation="62022" standardDeviationMicrosecondsPerInvocation="11395"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="72" invocations="229" avgMicrosecondsPerInvocation="314" maxMicrosecondsPerInvocation="27011" standardDeviationMicrosecondsPerInvocation="1831"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="66" invocations="138" avgMicrosecondsPerInvocation="480" maxMicrosecondsPerInvocation="29262" standardDeviationMicrosecondsPerInvocation="3023"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="62" invocations="29" avgMicrosecondsPerInvocation="2148" maxMicrosecondsPerInvocation="52582" standardDeviationMicrosecondsPerInvocation="9541"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="50" invocations="138" avgMicrosecondsPerInvocation="367" maxMicrosecondsPerInvocation="13553" standardDeviationMicrosecondsPerInvocation="1207"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="48" invocations="29" avgMicrosecondsPerInvocation="1665" maxMicrosecondsPerInvocation="42275" standardDeviationMicrosecondsPerInvocation="7677"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="37" invocations="138" avgMicrosecondsPerInvocation="273" maxMicrosecondsPerInvocation="8612" standardDeviationMicrosecondsPerInvocation="809"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="37" invocations="135" avgMicrosecondsPerInvocation="275" maxMicrosecondsPerInvocation="5860" standardDeviationMicrosecondsPerInvocation="592"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="34" invocations="878" avgMicrosecondsPerInvocation="39" maxMicrosecondsPerInvocation="1641" standardDeviationMicrosecondsPerInvocation="96"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="32" invocations="138" avgMicrosecondsPerInvocation="233" maxMicrosecondsPerInvocation="7087" standardDeviationMicrosecondsPerInvocation="697"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.obl.ObligationAnalysis" totalMilliseconds="31" invocations="45" avgMicrosecondsPerInvocation="689" maxMicrosecondsPerInvocation="7708" standardDeviationMicrosecondsPerInvocation="1558"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="30" invocations="163" avgMicrosecondsPerInvocation="188" maxMicrosecondsPerInvocation="8289" standardDeviationMicrosecondsPerInvocation="820"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="28" invocations="138" avgMicrosecondsPerInvocation="205" maxMicrosecondsPerInvocation="2003" standardDeviationMicrosecondsPerInvocation="363"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="27" invocations="29" avgMicrosecondsPerInvocation="958" maxMicrosecondsPerInvocation="16936" standardDeviationMicrosecondsPerInvocation="3235"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="26" invocations="29" avgMicrosecondsPerInvocation="906" maxMicrosecondsPerInvocation="17738" standardDeviationMicrosecondsPerInvocation="3231"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="25" invocations="138" avgMicrosecondsPerInvocation="186" maxMicrosecondsPerInvocation="1534" standardDeviationMicrosecondsPerInvocation="256"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ReturnPathTypeDataflowFactory" totalMilliseconds="24" invocations="1" avgMicrosecondsPerInvocation="24524" maxMicrosecondsPerInvocation="24524" standardDeviationMicrosecondsPerInvocation="0"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LazyInit" totalMilliseconds="23" invocations="29" avgMicrosecondsPerInvocation="801" maxMicrosecondsPerInvocation="22943" standardDeviationMicrosecondsPerInvocation="4184"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="22" invocations="29" avgMicrosecondsPerInvocation="784" maxMicrosecondsPerInvocation="7763" standardDeviationMicrosecondsPerInvocation="1751"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUnsatisfiedObligation" totalMilliseconds="22" invocations="29" avgMicrosecondsPerInvocation="771" maxMicrosecondsPerInvocation="17142" standardDeviationMicrosecondsPerInvocation="3142"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="21" invocations="29" avgMicrosecondsPerInvocation="756" maxMicrosecondsPerInvocation="10383" standardDeviationMicrosecondsPerInvocation="1915"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="20" invocations="163" avgMicrosecondsPerInvocation="125" maxMicrosecondsPerInvocation="6790" standardDeviationMicrosecondsPerInvocation="672"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ObligationDataflowFactory" totalMilliseconds="20" invocations="45" avgMicrosecondsPerInvocation="450" maxMicrosecondsPerInvocation="18463" standardDeviationMicrosecondsPerInvocation="2716"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="20" invocations="138" avgMicrosecondsPerInvocation="145" maxMicrosecondsPerInvocation="1737" standardDeviationMicrosecondsPerInvocation="268"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantPoolGenFactory" totalMilliseconds="20" invocations="29" avgMicrosecondsPerInvocation="689" maxMicrosecondsPerInvocation="9225" standardDeviationMicrosecondsPerInvocation="2274"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="19" invocations="162" avgMicrosecondsPerInvocation="118" maxMicrosecondsPerInvocation="8184" standardDeviationMicrosecondsPerInvocation="657"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="17" invocations="4504" avgMicrosecondsPerInvocation="3" maxMicrosecondsPerInvocation="1838" standardDeviationMicrosecondsPerInvocation="41"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="16" invocations="29" avgMicrosecondsPerInvocation="569" maxMicrosecondsPerInvocation="5311" standardDeviationMicrosecondsPerInvocation="1195"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="15" invocations="163" avgMicrosecondsPerInvocation="96" maxMicrosecondsPerInvocation="5045" standardDeviationMicrosecondsPerInvocation="430"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

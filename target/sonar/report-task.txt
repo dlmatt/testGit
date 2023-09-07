@@ -2,5 +2,5 @@ projectKey=it.reply.test:test
 serverUrl=http://localhost:9000
 serverVersion=9.9.0.65466
 dashboardUrl=http://localhost:9000/dashboard?id=it.reply.test%3Atest
-ceTaskId=AYpvuVGdGL5YhX8zBrJL
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYpvuVGdGL5YhX8zBrJL
+ceTaskId=AYpwIKBdGL5YhX8zBrJN
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYpwIKBdGL5YhX8zBrJN
