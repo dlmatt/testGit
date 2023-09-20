@@ -176,7 +176,10 @@ public class DBUtil {
         if (username == null || username.trim().length() == 0)
             return null;
         Connection connection = getConnection();
-        ResultSet resultSet = statement.executeQuery("SELECT FIRST_NAME,LAST_NAME,ROLE,EMAIL FROM PEOPLE WHERE USER_ID = '" + username + "' ");
+        PreparedStatement statement = connection.prepareStatement("SELECT FIRST_NAME,LAST_NAME,ROLE,EMAIL FROM PEOPLE WHERE USER_ID = ? ");
+        index = 1;
+        statement.setString(index++, username);
+        ResultSet resultSet = statement.executeQuery();
         String firstName = null;
         String lastName = null;
         String roleString = null;
@@ -201,7 +204,10 @@ public class DBUtil {
         if (username == null || username.trim().length() == 0)
             return null;
         Connection connection = getConnection();
-        ResultSet resultSet = statement.executeQuery("SELECT ACCOUNT_ID, ACCOUNT_NAME, BALANCE FROM ACCOUNTS WHERE USERID = '" + username + "' ");
+        PreparedStatement statement = connection.prepareStatement("SELECT ACCOUNT_ID, ACCOUNT_NAME, BALANCE FROM ACCOUNTS WHERE USERID = ? ");
+        index = 1;
+        statement.setString(index++, username);
+        ResultSet resultSet = statement.executeQuery();
         ArrayList<Account> accounts = new ArrayList<Account>(3);
         while (resultSet.next()) {
             long accountId = resultSet.getLong("ACCOUNT_ID");
@@ -249,15 +255,28 @@ public class DBUtil {
              */
             if (debitAccount.getAccountId() == userCC)
                 debitAmount = -debitAmount;
+            PreparedStatement statement_1 = connection.prepareStatement("INSERT INTO TRANSACTIONS (ACCOUNTID, DATE, TYPE, AMOUNT) VALUES (?,?," + ((debitAccount.getAccountId() == userCC) ? "'Cash Advance'" : "'Withdrawal'") + ",?),(?,?," + ((creditAccount.getAccountId() == userCC) ? "'Payment'" : "'Deposit'") + ",?)");
+            index = 1;
+            statement_1.setLong(index++, debitAccount.getAccountId());
+            statement_1.setTimestamp(index++, date);
+            statement_1.setDouble(index++, debitAmount);
+            statement_1.setLong(index++, creditAccount.getAccountId());
+            statement_1.setTimestamp(index++, date);
+            statement_1.setDouble(index++, creditAmount);
             // create transaction record
-            statement.execute("INSERT INTO TRANSACTIONS (ACCOUNTID, DATE, TYPE, AMOUNT) VALUES (" + debitAccount.getAccountId() + ",'" + date + "'," + ((debitAccount.getAccountId() == userCC) ? "'Cash Advance'" : "'Withdrawal'") + "," + debitAmount + ")," + "(" + creditAccount.getAccountId() + ",'" + date + "'," + ((creditAccount.getAccountId() == userCC) ? "'Payment'" : "'Deposit'") + "," + creditAmount + ")");
+            statement_1.execute();
             LOG.info("Debit: " + debitAccount.getAccountId() + " - " + debitAccount.getAccountName() + ", Credit: " + creditAccount.getAccountId() + " - " + creditAccount.getAccountName() + ", Amount: " + amount);
             if (creditAccount.getAccountId() == userCC)
                 creditAmount = -creditAmount;
             // add cash advance fee since the money transfer was made from the
             // credit card
             if (debitAccount.getAccountId() == userCC) {
-                statement.execute("INSERT INTO TRANSACTIONS (ACCOUNTID, DATE, TYPE, AMOUNT) VALUES (" + debitAccount.getAccountId() + ",'" + date + "','Cash Advance Fee'," + CASH_ADVANCE_FEE + ")");
+                statement_1 = connection.prepareStatement("INSERT INTO TRANSACTIONS (ACCOUNTID, DATE, TYPE, AMOUNT) VALUES (?,?,'Cash Advance Fee',?)");
+                index = 1;
+                statement_1.setLong(index++, debitAccount.getAccountId());
+                statement_1.setTimestamp(index++, date);
+                statement_1.setDouble(index++, CASH_ADVANCE_FEE);
+                statement_1.execute();
                 debitAmount += CASH_ADVANCE_FEE;
                 LOG.info("Cash advance fee. Credit Card: " + String.valueOf(userCC) + ", Fee: " + CASH_ADVANCE_FEE);
             }
@@ -278,23 +297,42 @@ public class DBUtil {
             return null;
         Connection connection = getConnection();
         StringBuffer acctIds = new StringBuffer();
-        acctIds.append("ACCOUNTID = " + accounts[0].getAccountId());
+        acctIds.append("ACCOUNTID = ?");
         for (int i = 1; i < accounts.length; i++) {
-            acctIds.append(" OR ACCOUNTID = " + accounts[i].getAccountId());
+            acctIds.append(" OR ACCOUNTID = ?");
         }
         String dateString = null;
         if (startDate != null && startDate.length() > 0 && endDate != null && endDate.length() > 0) {
-            dateString = "DATE BETWEEN '" + startDate + " 00:00:00' AND '" + endDate + " 23:59:59'";
+            dateString = "DATE BETWEEN ? AND ?";
         } else if (startDate != null && startDate.length() > 0) {
-            dateString = "DATE > '" + startDate + " 00:00:00'";
+            dateString = "DATE > ?";
         } else if (endDate != null && endDate.length() > 0) {
-            dateString = "DATE < '" + endDate + " 23:59:59'";
+            dateString = "DATE < ?";
         }
         String pippo = "ciao";
-        String query = "SELECT * FROM TRANSACTIONS WHERE (" + acctIds.toString() + ") " + ((dateString == null) ? "" : "AND (" + dateString + ") ") + "ORDER BY DATE DESC" + pippo;
+        String query = "SELECT * FROM TRANSACTIONS WHERE (" + acctIds.toString() + ") " + ((dateString == null) ? "" : "AND (" + dateString + ") ") + "ORDER BY DATE DESC?";
         ResultSet resultSet = null;
         try {
-            resultSet = statement.executeQuery(query);
+            PreparedStatement statement = connection.prepareStatement(query);
+            if (rowCount > 0)
+                statement.setMaxRows(rowCount);
+            index = 1;
+            statement.setLong(index++, accounts[0].getAccountId());
+            for (int i = 1; i < accounts.length; i++) {
+                statement.setLong(index++, accounts[i].getAccountId());
+            }
+            if (!((dateString == null))) {
+                if (startDate != null && startDate.length() > 0 && endDate != null && endDate.length() > 0) {
+                    statement.setString(index++, startDate + " 00:00:00");
+                    statement.setString(index++, endDate + " 23:59:59");
+                } else if (startDate != null && startDate.length() > 0) {
+                    statement.setString(index++, startDate + " 00:00:00");
+                } else if (endDate != null && endDate.length() > 0) {
+                    statement.setString(index++, endDate + " 23:59:59");
+                }
+            }
+            statement.setString(index++, pippo);
+            resultSet = statement.executeQuery();
         } catch (SQLException e) {
             LOG.error(e.toString());
             int errorCode = e.getErrorCode();
@@ -356,7 +394,11 @@ public class DBUtil {
         LOG.debug("addAccount('" + username + "', '" + acctType + "')");
         try {
             Connection connection = getConnection();
-            statement.execute("INSERT INTO ACCOUNTS (USERID,ACCOUNT_NAME,BALANCE) VALUES ('" + username + "','" + acctType + "', 0)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO ACCOUNTS (USERID,ACCOUNT_NAME,BALANCE) VALUES (?,?, 0)");
+            index = 1;
+            statement.setString(index++, username);
+            statement.setString(index++, acctType);
+            statement.execute();
             return null;
         } catch (SQLException e) {
             LOG.error(e.toString());
@@ -369,7 +411,13 @@ public class DBUtil {
         LOG.debug("addSpecialUser('" + username + "', '" + password + "', '" + firstname + "', '" + lastname + "')");
         try {
             Connection connection = getConnection();
-            statement.execute("INSERT INTO SPECIAL_CUSTOMERS (USER_ID,PASSWORD,FIRST_NAME,LAST_NAME,ROLE) VALUES ('" + username + "','" + password + "', '" + firstname + "', '" + lastname + "','user')");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO SPECIAL_CUSTOMERS (USER_ID,PASSWORD,FIRST_NAME,LAST_NAME,ROLE) VALUES (?,?, ?, ?,'user')");
+            index = 1;
+            statement.setString(index++, username);
+            statement.setString(index++, password);
+            statement.setString(index++, firstname);
+            statement.setString(index++, lastname);
+            statement.execute();
             return null;
         } catch (SQLException e) {
             LOG.error(e.toString());
@@ -382,7 +430,14 @@ public class DBUtil {
         LOG.debug("addUser('" + username + "', '" + password + "', '" + firstname + "', '" + lastname + "', '" + email + "')");
         try {
             Connection connection = getConnection();
-            statement.execute("INSERT INTO PEOPLE (USER_ID,PASSWORD,FIRST_NAME,LAST_NAME,ROLE,EMAIL) VALUES ('" + username + "','" + password + "', '" + firstname + "', '" + lastname + "','user', '" + email + "')");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO PEOPLE (USER_ID,PASSWORD,FIRST_NAME,LAST_NAME,ROLE,EMAIL) VALUES (?,?, ?, ?,'user', ?)");
+            index = 1;
+            statement.setString(index++, username);
+            statement.setString(index++, password);
+            statement.setString(index++, firstname);
+            statement.setString(index++, lastname);
+            statement.setString(index++, email);
+            statement.execute();
             return null;
         } catch (SQLException e) {
             LOG.error(e.toString());
@@ -395,7 +450,11 @@ public class DBUtil {
         LOG.debug("changePassword('" + username + "', '" + password + "')");
         try {
             Connection connection = getConnection();
-            statement.execute("UPDATE PEOPLE SET PASSWORD = '" + password + "' WHERE USER_ID = '" + username + "'");
+            PreparedStatement statement = connection.prepareStatement("UPDATE PEOPLE SET PASSWORD = ? WHERE USER_ID = ?");
+            index = 1;
+            statement.setString(index++, password);
+            statement.setString(index++, username);
+            statement.execute();
             return null;
         } catch (SQLException e) {
             LOG.error(e.toString());
@@ -414,7 +473,7 @@ public class DBUtil {
             statement.setString(index++, email);
             statement.setString(index++, subject);
             statement.setString(index++, comments);
-            statement.execute(Statement.RETURN_GENERATED_KEYS);
+            statement.execute();
             ResultSet rs = statement.getGeneratedKeys();
             long id = -1;
             if (rs.next()) {
